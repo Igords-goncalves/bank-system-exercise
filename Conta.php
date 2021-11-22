@@ -15,13 +15,60 @@
         }
 
         public function fecharConta() {
-            // code ...
+            # code ...
+        }
+
+        public function depositar() {
+            if (!!$this->statusDaConta) {
+                # code...
+            }
         }
 
         public function sacar() {
             if (!!$this->statusDaConta && $this->saldoDaConta > 0) {
-                
+                # code ...
             }
+        }
+
+        public function pagarMensalidade() {
+            # code ...
+        }
+
+        // Métodos Getters e Setters
+        
+        public function getNumero() {
+            return $this->numeroDaConta;
+        }
+        public function setNumero($numero) {
+            $this->numeroDaConta = $numero;
+        }
+
+        public function getTipo() {
+            return $this->tipoDaConta;
+        }
+        public function setTipo($tipo) {
+            $this->tipoDaConta = $tipo;
+        }
+
+        public function getDono() {
+            return $this->donoDaConta;
+        }
+        public function setdono($dono) {
+            $this->donoDaConta = $dono;
+        }
+
+        public function getSaldo() {
+            return $this->donoDaConta;
+        }
+        public function setSaldo($dono) {
+            $this->donoDaConta = $dono;
+        }
+
+        public function getStatus() {
+            return $this->statusDaConta;
+        }
+        public function setStatus($status) {
+            $this->statusDaConta = $status;
         }
     }
 ?>
