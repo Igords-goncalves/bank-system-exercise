@@ -21,7 +21,17 @@
     <?php
         require "Conta.php";
 
-        // Instaciamento ...
+        // Instaciando ...
+
+        $reinaldo = new Conta;
+        $reinaldo->abrirConta();
+        $reinaldo->numeroDaConta = 4587;
+        $reinaldo->setTipo("CP");
+        $reinaldo->setdono("Reinaldo Azevedo Cruz");
+
+        print_r($reinaldo);
+
+
     ?>
     </pre>
 </body>

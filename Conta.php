@@ -43,10 +43,10 @@
 
         # Métodos Getters e Setters
 
-        public function getNumero() {
+        public function getNumero() { //Acessa
             return $this->numeroDaConta;
         }
-        public function setNumero($numero) {
+        public function setNumero($numero) { //Modifica
             $this->numeroDaConta = $numero;
         }
 
@@ -65,10 +65,10 @@
         }
 
         public function getSaldo() {
-            return $this->donoDaConta;
+            return $this->saldoDaConta;
         }
-        public function setSaldo($dono) {
-            $this->donoDaConta = $dono;
+        public function setSaldo($saldo) {
+            $this->saldoDaConta = $saldo;
         }
 
         public function getStatus() {
