@@ -34,8 +34,15 @@
             # code ...
         }
 
-        // Métodos Getters e Setters
-        
+        # Constructor
+
+        public function __construct() {
+            $this->statusDaConta = false;
+            $this->saldoDaConta = 0;
+        }
+
+        # Métodos Getters e Setters
+
         public function getNumero() {
             return $this->numeroDaConta;
         }
