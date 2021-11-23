@@ -1,0 +1,9 @@
+* Eu quero gerar um numero de conta aleatório todas a vezes 
+que abrir uma nova conta
+
+* Os numeros de conta não podem ser iguais
+
+* Por padrão todos os numeros devem ter 6 caracteres
+
+* Será necessária uma lógica para excluir a possibilidade 
+de numeros numeros de conta iguais serem gerados
