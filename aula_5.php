@@ -23,15 +23,18 @@
 
         // Instaciando ...
 
-        $reinaldo = new Conta;
-        $reinaldo->abrirConta();
-        $reinaldo->numeroDaConta = 4782;
-        $reinaldo->setTipo("CP");
-        $reinaldo->setdono("Reinaldo Azevedo Cruz");
+        $conta1 = new Conta;
+        $conta1->abrirConta("CC");
+        $conta1->setNumero(45763398); // Quero gerando aleatório
+        $conta1->setdono("Reinaldo Azevedo Cruz");
 
-        print_r($reinaldo);
+        $conta1->depositar(50);
+        $conta1->pagarMensalidade();
+        $conta1->sacar(188);
+        $conta1->fecharConta(); //O status vira negativo
 
 
+        print_r($conta1);
     ?>
     </pre>
 </body>

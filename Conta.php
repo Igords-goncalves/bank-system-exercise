@@ -6,8 +6,13 @@
         private $saldoDaConta;
         private $statusDaConta;
 
-        public function abrirConta() {
-            if (!!$this->statusDaConta && $this->tipoDaConta == "CC") {
+        // Principias funcionalidades
+
+        public function abrirConta($type) {
+            $this->setTipo($type); //Acessando o objeto global
+            $status = $this->setStatus(true); // Atribuindo a uma variável
+
+            if ($type == "CC" && !!$status) {
                 $this->saldoDaConta = 50;
             } else {
                 $this->saldoDaConta = 150;
@@ -15,33 +20,59 @@
         }
 
         public function fecharConta() {
-            # code ...
-        }
+            $saldo = $this->saldoDaConta;
 
-        public function depositar() {
-            if (!!$this->statusDaConta) {
-                # code...
+            if ($saldo > 0 || $saldo < 0) {
+                print("Impossível fechar conta: R$$saldo &nbsp");
+                // $saque = $this->sacar();
+                // return $saque;
+            } else {
+                $this->setStatus(false);
             }
         }
 
-        public function sacar() {
-            if (!!$this->statusDaConta && $this->saldoDaConta > 0) {
-                # code ...
+        public function depositar($valor) {
+            $status = $this->statusDaConta;
+
+            if (!!$status) {
+                $this->setSaldo( //Eficaz 
+                    $this->getSaldo() + $valor);
+            } else {
+                print("Conta está fechada.");
+            }
+        }
+
+        public function sacar($valor) {
+            $status = $this->statusDaConta;
+            $saldo = $this->saldoDaConta;
+
+            if (!!$status && $saldo > 0) {
+                $this->setSaldo($this->getSaldo() - $valor);
+                print("Valor do saque: $valor <br>");
+            } else if(!!$status && $saldo <= 0) {
+                print("Saldo insuficiente: $saldo <br>");
             }
         }
 
         public function pagarMensalidade() {
-            # code ...
+            $status = $this->statusDaConta;
+            $tipo = $this->tipoDaConta;
+
+            if (!!$status && $tipo == "CC") {
+                $this->setSaldo($this->getSaldo() - 12);
+            } else {
+                $this->setSaldo($this->getSaldo() - 20);
+            }
         }
 
-        # Constructor
+        // Constructor
 
         public function __construct() {
             $this->statusDaConta = false;
             $this->saldoDaConta = 0;
         }
 
-        # Métodos Getters e Setters
+        // Métodos Getters e Setters
 
         public function getNumero() { //Acessa
             return $this->numeroDaConta;
