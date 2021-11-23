@@ -25,7 +25,7 @@
 
         $reinaldo = new Conta;
         $reinaldo->abrirConta();
-        $reinaldo->numeroDaConta = 4587;
+        $reinaldo->numeroDaConta = 4782;
         $reinaldo->setTipo("CP");
         $reinaldo->setdono("Reinaldo Azevedo Cruz");
 
