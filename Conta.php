@@ -31,6 +31,12 @@
             }
         }
 
+        public function gerarNumero() {
+            if (!!$this->statusDaConta) {
+                $this->setNumero(rand(100000, 999999));
+            }
+        }
+
         public function depositar($valor) {
             $status = $this->statusDaConta;
 
