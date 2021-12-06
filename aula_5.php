@@ -39,6 +39,12 @@
         $conta2->setdono("Igor Gonçalves");
         $conta2->gerarNumero();
         print_r($conta2);
+
+        $conta3 = new Conta;
+        $conta3->abrirConta("CC");
+        $conta3->setdono("Monique Cunha");
+        $conta3->gerarNumero();
+        print_r($conta3);
     ?>
     </pre>
 </body>

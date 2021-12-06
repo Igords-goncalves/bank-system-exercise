@@ -34,6 +34,7 @@
         public function gerarNumero() {
             if (!!$this->statusDaConta) {
                 $this->setNumero(rand(100000, 999999));
+                // Posso retornar um valor verdadeiro que originalmente é falso
             }
         }
 
@@ -76,6 +77,7 @@
         public function __construct() {
             $this->statusDaConta = false;
             $this->saldoDaConta = 0;
+            $this->numeroDaConta = 0;
         }
 
         // Métodos Getters e Setters
