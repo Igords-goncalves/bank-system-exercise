@@ -1,9 +1,9 @@
-* Eu quero gerar um numero de conta aleatório todas a vezes 
-que abrir uma nova conta - ok
+* Eu quero gerar um numero de conta aleatório todas a vezes que abrir uma nova conta - ok
 
 * Por padrão todos os numeros devem ter 6 caracteres - ok
 
-* Os numeros de conta não podem ser iguais
+* Os numeros de conta não podem ser iguais 
 
-* Será necessária uma lógica para excluir a possibilidade 
-de numeros numeros de conta iguais serem gerados
+* Será necessária uma lógica para excluir a possibilidade de numeros numeros de conta iguais serem gerados
+
+* O problema acontece pois todos as contas geradas pertecem a mesma classe, uma vez que possuem os mesmo métodos, toda vez que um novo método for criado os outros estarão em ação. 

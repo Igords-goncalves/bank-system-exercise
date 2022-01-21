@@ -6,7 +6,7 @@
         private $saldoDaConta;
         private $statusDaConta;
 
-        // Principias funcionalidades
+        //&* Principias funcionalidades e regras do negócio
 
         public function abrirConta($type) {
             $this->setTipo($type); //Acessando o objeto global
@@ -20,7 +20,7 @@
         }
 
         public function fecharConta() {
-            $saldo = $this->saldoDaConta;
+            $saldo = $this->saldoDaConta; // Atribí para variáveis a fim de facilitar a lógica
 
             if ($saldo > 0 || $saldo < 0) {
                 print("Impossível fechar conta: R$$saldo &nbsp");
@@ -28,12 +28,15 @@
                 // return $saque;
             } else {
                 $this->setStatus(false);
+                $this->numeroDaConta = 0; // Uma vez que a conta está fechada o número é cancelado
             }
         }
 
+        //! Enfrentando um bug quanto a gerar um número aleatório
+
         public function gerarNumero() {
-            if (!!$this->statusDaConta) {
-                $this->setNumero(rand(100000, 999999));
+            if(!!$this->statusDaConta) {
+                $this->setNumero(mt_rand(100000, 999999));
                 // Posso retornar um valor verdadeiro que originalmente é falso
             }
         }
@@ -72,7 +75,7 @@
             }
         }
 
-        // Constructor
+        //&* Constructor
 
         public function __construct() {
             $this->statusDaConta = false;
@@ -80,7 +83,7 @@
             $this->numeroDaConta = 0;
         }
 
-        // Métodos Getters e Setters
+        //&* Métodos Getters e Setters
 
         public function getNumero() { //Acessa
             return $this->numeroDaConta;
